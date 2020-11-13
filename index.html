@@ -9,30 +9,76 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div class="game-container">
-      <header>
-        <h1>Poker</h1>
-      </header>
-      <div class="rounds">
-        <p class="round-label">Player 1<span id="hand"></span></p>
-        <br>
+    <header>
+      <h1>Poker</h1>
+    </header>
+    <main class="game-container">
+     
+      <section class="row">
+        
+        <section class="rounds column">
+          <p class="round-label">Player 1<span id="hand"></span></p>
+          <br>
+          <table>
+            <tr>
+              <td><figure>
+                <img id="card1Img" src="PNG/red_back.png" height=200px width=140px/>
+                </figure>
+              </td>
+              <td>
+                <figure>
+                <img id="card2Img" src="PNG/red_back.png" height=200px width=140px/>
+                </figure>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+        <section class="rounds column">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <input type="button" class="button" id="deal-card" value="Deal Hand"></input>
+        </section>
+
+        <section class="rounds column">
+          <p class="round-label">Computer<span id="hand"></span></p>
+          <br>
+          <table>
+            <tr>
+              <td><figure>
+                <img id="card1Img" src="PNG/red_back.png" height=200px width=140px/>
+                </figure>
+              </td>
+              <td>
+                <figure>
+                <img id="card2Img" src="PNG/red_back.png" height=200px width=140px/>
+                </figure>
+              </td>
+            </tr>
+          </table>
+        </section>
+
+      </section>
+            
+      <section class="community-cards">
         <table>
-          <th>
-            <figure>
-            <img id="card1Img" src="PNG/red_back.png" height=200px width=140px/>
-            </figure>
-          </th>
-          <th>
-            <figure>
-            <img id="card2Img" src="PNG/red_back.png" height=200px width=140px/>
-            </figure>
-          </th>
+          <tr>
+            <td><figure><img id="flop1Img" height=200px width=140px/></figure></td>
+            <td><figure><img id="flop2Img" height=200px width=140px/></figure></td>
+            <td><figure><img id="flop3Img" height=200px width=140px/></figure></td>
+            <td><figure><img id="turnImg" height=200px width=140px/></figure></td>
+            <td><figure><img id="riverImg" height=200px width=140px/></figure></td>
+          </tr>
         </table>
-      </div>
-      <div class="next-round-container">
-        <button class="button" id="deal-card">Deal Card</button>
-      </div>
-    </div>
+      </section>
+
+    </main>
     <footer>
       <p style="text-align: center;">© 2020 Adam Hughes</p>
     </footer>

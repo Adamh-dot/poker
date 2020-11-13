@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   height: 100%;
   margin: 0 auto;
@@ -6,6 +9,11 @@ body {
   background-image: url(Resources/poker_chips-2.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center;
+}
+
+main {
+  color: white;
 }
 
 .game-container {
@@ -21,7 +29,7 @@ header {
   opacity: 0.75;
   }
 
-.rounds {
+.rounds, .community-cards {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,6 +51,7 @@ header {
   color: #fff;
   font-size: 100%;
   cursor: pointer;
+
 }
 
 .button[disabled] {
@@ -54,6 +63,8 @@ header {
 table, th, td {
   border-collapse: collapse;
   border-spacing: 0;
+
+  vertical-align: middle;
 }
 
 header h1 {
@@ -69,4 +80,21 @@ figure {
 footer p {
   color: gray;
   font-family: 'Big Shoulders Stencil Text', cursive;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.community-cards td {
+  background-color: rgba(128, 128, 128,0.4);
 }
