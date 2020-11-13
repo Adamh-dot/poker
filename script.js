@@ -18,12 +18,17 @@ function getRandomCard() {
     card2 = newPack[(Math.floor(Math.random() * newPack.length))]; //gets 2nd card from reduced pack size
     hand = `${card1} ${card2}`;
     console.log(hand);
+    const card1Url = `PNG/${card1}.png`;
+    const card2Url = `PNG/${card2}.png`;
+    console.log(card1Url);
+    document.getElementById('card1Img').src = card1Url;
+    document.getElementById('card2Img').src = card2Url;
 }
 
 dealCardButton.addEventListener('click', () => {
     console.log('click');
     getRandomCard(pack);
-    cardResult.innerText = hand;
+    cardResult.innerHTML = hand;
 })
 
 //render card hand in html
