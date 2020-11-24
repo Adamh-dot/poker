@@ -256,11 +256,21 @@ const handHasPair = (finalHandInfo) => {
         console.log(`You have TWO PAIRS: ${pairs[0]} and ${pairs[1]}`);
         document.getElementById('handResult').innerHTML = `You have TWO PAIRS: ${pairs[0]} and ${pairs[1]}`;
         document.getElementById("handResult").style.visibility = 'visible';
-    } 
+    }
+}
+
+/* function checks if hand has a flush by looking at finalHandInfo.suits object for a property value >=5 */
+const handHasFlush = (finalHandInfo) => {
+    if(Object.values(finalHandInfo.suits).some(element => element >= 5)) {
+        console.log(`You have a FLUSH!`);
+        document.getElementById('handResult').innerHTML = `You have a FLUSH!`;
+        document.getElementById("handResult").style.visibility = 'visible';
+        return true;
+    }
 }
 
 dealCardButton.addEventListener('click', () => {
-        if(dealCardButton.value === 'Deal Hand') {
+    if(dealCardButton.value === 'Deal Hand') {
         getRandomCard(pack);
         dealCardButton.value = 'Flop!';
     } else if (dealCardButton.value === 'Flop!') {
@@ -273,6 +283,7 @@ dealCardButton.addEventListener('click', () => {
         dealRiver();
         populateHandInfo(playerHand);
         handHasPair(finalHandInfo);
+        handHasFlush(finalHandInfo);
         dealCardButton.value = 'Reveal!';
     } else if (dealCardButton.value === 'Reveal!') {
         revealCompCards();
@@ -283,4 +294,4 @@ dealCardButton.addEventListener('click', () => {
     } else if (dealCardButton.value === 'New Game!') {
         location.reload();
     }
-})
+});
